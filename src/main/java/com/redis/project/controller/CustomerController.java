@@ -1,7 +1,7 @@
-package com.redis.project.api.controller;
+package com.redis.project.controller;
 
-import com.redis.project.api.dto.CustomerDTO;
-import com.redis.project.domain.service.CustomerService;
+import com.redis.project.dto.CustomerDTO;
+import com.redis.project.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class CustomerController {
 
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<Void> save(@RequestBody CustomerDTO customerDTO) {
-        customerService.saveToCache(customerDTO.getId(), customerDTO, 60); // 30 seconds
+        customerService.saveToCache(customerDTO.getId(), customerDTO, 60); // 60 seconds
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

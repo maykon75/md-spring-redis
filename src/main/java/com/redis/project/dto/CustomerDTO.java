@@ -1,4 +1,4 @@
-package com.redis.project.api.dto;
+package com.redis.project.dto;
 
 import lombok.Getter;
 import lombok.Setter;
