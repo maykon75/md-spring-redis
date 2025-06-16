@@ -25,11 +25,6 @@ class CustomerServiceTest {
     @InjectMocks
     private CustomerService customerService;
 
-    @BeforeEach
-    void setUp() {
-
-    }
-
     @Test
     void shouldSaveToCache() {
         String key = "123";
